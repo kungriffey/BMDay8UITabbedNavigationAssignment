@@ -21,20 +21,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   
+  //Set the Profile Tab
   ProfileViewController *profileViewController = [[ProfileViewController alloc] init];
   UINavigationController *profileNavController = [[UINavigationController alloc] initWithRootViewController:profileViewController];
   
+  //Set the Feed Tab
   FeedViewController *feedViewController = [[FeedViewController alloc] init];
-  UINavigationController *feedNavController = [[UINavigationController alloc]initWithRootViewController:feedViewController];
+  UINavigationController *feedNavController = [[UINavigationController alloc] initWithRootViewController:feedViewController];
   
-  
+  //Set the Favourites Tab
   FavouritesViewController *favouritesViewController = [[FavouritesViewController alloc] init];
   UINavigationController *favouritesNavController = [[UINavigationController alloc]initWithRootViewController:favouritesViewController];
 
-  
+  //Set all 3 view controllers to the navigation pane
   UITabBarController *tabController = [[UITabBarController alloc] init];
   tabController.viewControllers = @[feedNavController, favouritesNavController, profileNavController];
   
+  //Create the window
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   self.window.rootViewController = tabController;
   [self.window makeKeyAndVisible];

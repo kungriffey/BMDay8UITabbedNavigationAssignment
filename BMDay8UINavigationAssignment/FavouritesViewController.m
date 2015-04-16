@@ -20,7 +20,7 @@
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
   if (self) {
     self.title = @"Favourites";
-    self.tabBarItem.image = [UIImage imageNamed:@"tab_icon_favorites"];
+    self.tabBarItem.image = [UIImage imageNamed:@"favourite"];
   }
   return self;
   
@@ -29,9 +29,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-  UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"logo.jpg"]];
+  UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Logo2"]];
   
-  imageView.contentMode = UIViewContentModeTop;
+  imageView.contentMode = UIViewContentModeCenter;
   imageView.frame = self.view.frame;
   
   [self.view addSubview:imageView];
@@ -48,8 +48,10 @@
 }
 
 
-- (void)showProfile: (UIButton*) sender{
-  NSLog(@"Show profile clicked");
+- (void)showProfile:(id)sender {
+  ProfileViewController *derp = [[ProfileViewController alloc]init];
+  [self.navigationController pushViewController:derp animated:YES];
+  
 }
 
 

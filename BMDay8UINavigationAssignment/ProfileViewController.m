@@ -19,7 +19,7 @@
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
   if (self) {
     self.title = @"Profile";
-    self.tabBarItem.image = [UIImage imageNamed:@"tab_icon_profile"];
+    self.tabBarItem.image = [UIImage imageNamed:@"profile-icon"];
   }
   return self;
 }
@@ -29,8 +29,8 @@
   [super viewDidLoad];
   
   UIButton *profileButton = [UIButton buttonWithType:UIButtonTypeCustom];
-  [profileButton setImage:[UIImage imageNamed:@"profile_image"] forState:UIControlStateNormal];
-  [profileButton setImage:[UIImage imageNamed:@"profile_image"] forState:UIControlStateHighlighted];
+  [profileButton setImage:[UIImage imageNamed:@"profile-icon"] forState:UIControlStateNormal];
+  [profileButton setImage:[UIImage imageNamed:@"profile-icon"] forState:UIControlStateHighlighted];
   profileButton.frame = CGRectMake(15, 15, 200, 189);
   
   [self.view addSubview:profileButton];
