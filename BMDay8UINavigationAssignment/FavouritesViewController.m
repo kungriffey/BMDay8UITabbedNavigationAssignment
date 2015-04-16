@@ -29,19 +29,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-  UIImageView *kgImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"logo.jpg"]];
+  UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"logo.jpg"]];
   
-  kgImageView.contentMode = UIViewContentModeTop;
-  kgImageView.frame = self.view.frame;
+  imageView.contentMode = UIViewContentModeTop;
+  imageView.frame = self.view.frame;
   
-  [self.view addSubview:kgImageView];
-  
-  UIButton *kgProfileButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-  kgProfileButton.frame = CGRectMake(60, 300, 200, 44);
-  [kgProfileButton setTitle:@"View Profile" forState:UIControlStateNormal];
-  [self.view addSubview:kgProfileButton];
-  [kgProfileButton addTarget:self action:@selector(showProfile:) forControlEvents:UIControlEventTouchUpInside];
+  [self.view addSubview:imageView];
+
+  UIButton *favouritesViewButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+  favouritesViewButton.frame = CGRectMake(60, 300, 200, 44);
+  [favouritesViewButton setTitle:@"View Favourites" forState:UIControlStateNormal];
+  [self.view addSubview:favouritesViewButton];
+  [favouritesViewButton addTarget:self action:@selector(showProfile:) forControlEvents:UIControlEventTouchUpInside];
 }
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+  NSLog(@"Touched Favourites");
+}
+
+
+- (void)showProfile: (UIButton*) sender{
+  NSLog(@"Show profile clicked");
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

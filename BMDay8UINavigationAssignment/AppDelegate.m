@@ -25,14 +25,15 @@
   UINavigationController *profileNavController = [[UINavigationController alloc] initWithRootViewController:profileViewController];
   
   FeedViewController *feedViewController = [[FeedViewController alloc] init];
-  UINavigationController *feedNavController = [[UINavigationController alloc]init];
+  UINavigationController *feedNavController = [[UINavigationController alloc]initWithRootViewController:feedViewController];
+  
   
   FavouritesViewController *favouritesViewController = [[FavouritesViewController alloc] init];
-  UINavigationController *favouritesNavController = [[UINavigationController alloc]init];
+  UINavigationController *favouritesNavController = [[UINavigationController alloc]initWithRootViewController:favouritesViewController];
 
   
   UITabBarController *tabController = [[UITabBarController alloc] init];
-  tabController.viewControllers = @[profileNavController, feedNavController, favouritesNavController];
+  tabController.viewControllers = @[feedNavController, favouritesNavController, profileNavController];
   
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   self.window.rootViewController = tabController;
