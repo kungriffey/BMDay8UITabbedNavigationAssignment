@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+//class forwarding
+@class ViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) ViewController *kgViewController;
 
 
 @end
