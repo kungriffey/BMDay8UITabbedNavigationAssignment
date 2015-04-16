@@ -14,9 +14,17 @@
 
 @implementation FeedViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (void)viewDidLoad
+{
+  [super viewDidLoad];
+  
+  UIButton *feedViewButton = [UIButton buttonWithType:UIButtonTypeCustom];
+  [feedViewButton setImage:[UIImage imageNamed:@"profile_image"] forState:UIControlStateNormal];
+  [feedViewButton setImage:[UIImage imageNamed:@"profile_image"] forState:UIControlStateHighlighted];
+  feedViewButton.frame = CGRectMake(15, 15, 200, 189);
+  
+  [self.view addSubview:feedViewButton];
+  [feedViewButton addTarget:self action:@selector(showZoomedProfile:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning {
